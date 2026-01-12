@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <meta property="og:title" content="The Periodic Table" />
+    <meta property="og:description" content="A compilation of currently known elements and related information." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://replit.com/public/images/opengraph.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@replit" />
+    <meta name="twitter:title" content="The Periodic Table" />
+    <meta name="twitter:description" content="A compilation of currently known elements and related information." />
+    <meta name="twitter:image" content="https://replit.com/public/images/opengraph.png" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <nav id="nav">
+        <a href="https://novabuddy.org" class="nav-logo">
+          <img src="Media/NovaBuddy-Logo.jpg" alt="Logo">
+      </a>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a id="about" href="about.html">About</a></li>
+      </ul>
+      <div class="nav-spacer"></div>
+    </nav>
+    <div class="container space-y-8">
+      <!-- Header Section -->
+      <header class="header-section">
+        <div class="header-card">
+          <h1 class="header-title">
+            The Periodic Table
+          </h1>
+          <div class="header-subtitle">
+            <!-- Atom Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></svg>
+            <span>A Brief Overview</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="grid-container">
+        <!-- History Card -->
+        <div class="card bg-yellow rotate-1">
+          <div class="card-header">
+            <div class="card-title">
+              <!-- BookOpen Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              History & Origins
+            </div>
+          </div>
+          <div class="card-content">
+            <p class="mb-4">
+              The periodic table was invented by Russian chemist <strong>Dmitri Mendeleev</strong> in 1869.
+            </p>
+            <p>
+              His table organized the then-known elements by atomic weight and properties. Its key innovation was leaving spaces for elements that had not yet been discovered, which were later found to match his predictions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Composition Card -->
+        <div class="card bg-red rotate-neg-1">
+          <div class="card-header">
+            <div class="card-title">
+              <!-- Beaker Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M4.5 3h15"/><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/><path d="M6 14h12"/></svg>
+              Composition
+            </div>
+          </div>
+          <div class="card-content">
+            <p class="mb-4">
+              There are currently <strong>118 known elements</strong> in the periodic table, with hydrogen being the first and oganesson being the last.
+            </p>
+            <p>
+              While 94 of these occur naturally on Earth, the remaining 24 have been synthesized in laboratories.
+            </p>
+          </div>
+        </div>
+
+        <!-- Organization Card -->
+        <div class="card bg-purple rotate-1 col-span-2">
+          <div class="card-header">
+            <div class="card-title">
+              <!-- Layers Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+              Organization & Trends
+            </div>
+          </div>
+          <div class="card-content inner-grid">
+            <div>
+              <h3 class="section-title">Structure</h3>
+              <p class="mb-4">The elements are organized by their <strong>atomic number</strong> (number of protons).</p>
+              <p>It depicts the periodic law: elements arranged by atomic number show recurring properties. The table is divided into four blocks, and elements in the same group share chemical characteristics.</p>
+            </div>
+            <div>
+              <h3 class="section-title">Trends</h3>
+              <p class="mb-4">Vertical, horizontal, and diagonal trends characterize the table.</p>
+              <ul class="list-disc list-space">
+                <li><strong>Metallic character</strong>: Increases going down a group and right-to-left.</li>
+                <li><strong>Nonmetallic character</strong>: Increases from bottom-left to top-right.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learn More Button
+      <div class="btn-container">
+        <a 
+          href="https://en.wikipedia.org/wiki/Periodic_table" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          Learn More on Wikipedia 
+          ExternalLink Icon
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon btn-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div> -->
+
+      <div class="separator"></div>
+
+      <!-- Footer / Credits -->
+      <footer class="card footer">
+        <h3 class="footer-title">
+            <!-- Users Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Credits & Acknowledgements
+        </h3>
+        
+        <div class="footer-grid">
+            <div class="space-y-8">
+                <div>
+                    <h4 class="footer-subtitle">Idea Architect and Coder</h4>
+                    <p class="icon-text">
+                        <!-- User Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sm"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        Shivum Pathak
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-subtitle">Guidance and Support </h4>
+                    <ul class="list-disc list-space list-none text-gray">
+                        <li><strong>Coding:</strong> Mr. O’Connell (Tech Teacher at Hilldale School, Daly City, CA)</li>
+                        <li><strong>Design:</strong> Karshan Patel</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-subtitle">Content Contributors</h4>
+                <ul class="list-disc text-gray list-space">
+                    <li>Marco Angeldones</li>
+                    <li>Anton Varfolomeev</li>
+                    <li>Charlie Huynh</li>
+                </ul>
+                
+                <div class="info-box">
+                    <p><strong>This website includes:</strong> A compilation of currently known elements and related information.</p>
+                </div>
+            </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

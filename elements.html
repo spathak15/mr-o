@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Periodic Table Game</title>
+    <link rel="stylesheet" href="learnstyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav id="nav">
+        <a href="https://novabuddy.org" class="nav-logo">
+          <img id="logo" src="Media/NovaBuddy-Logo.jpg" alt="Logo">
+      </a>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+      </ul>
+      <div class="nav-spacer"></div>
+    </nav>
+    <div id="main">
+        <div id="each-element">
+            <h3 class="el-info" id="num">1</h3>
+            <h1 class="el-info" id="symbol">H</h1>
+            <h1 id="el-name">Hydrogen</h1>
+        </div>
+        <div id="search-bar">
+            <input type="text" id="search-inp" placeholder="Search by name">
+            <ul id="suggestions"></ul>
+        </div>
+        <div id="learn-screen">
+            <div id="intro"><h1 id="introwords"></h1></div>
+            <div id="content">
+                <div id="prevdiv">
+                    <button id="prevbtn"><div><img id="previmg" src="Media/PrevBtnPixel.png" alt="Previous Element" width="360" height="360"></div></button>
+                </div>
+                <div id="ffbox">
+                    <div id="ffs" class="learnels"><h3>Fun Facts</h3></div>
+                    <div id="sources" class="learnels"><h3>Sources</h3></div>
+                    <div id="apps" class="learnels"><h3>Applications</h3></div>
+                    <div id="basicscrn" class="learnels">
+                        <h3>Basic Facts</h3></div>
+                    <div id="config" class="learnels">
+                        <h3>Electron Configuration</h3></div>
+                    <div id="ions" class="learnels">
+                        <h3>Common Compounds</h3></div>
+                </div>
+                <div id="nextdiv">
+                    <button id="nextbtn"><div><img id="nextimg" src="Media/NextBtnPixel.png" alt="Next Element"></div></button>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="basicModal">
+            <div class="modal-content">
+                <button class="close-btn">&times;</button>
+                <section class="properties-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h1 id="properties-title">Basic Properties</h1>
+                        </div>
+                        <div class="properties-grid">
+                            <div class="property-card">
+                                <div class="property-icon"><img src="Media/Magnet.png" width="100%"></div>
+                                <h3>Category</h3>
+                                <div class="value"></div>
+                                <div class="unit">What it is</div>
+                            </div>
+                            <div class="property-card">
+                                <div id="state-icon" class="property-icon"><img id="stateimg" width="100%"></div>
+                                <h3>State</h3>
+                                <div class="value"></div>
+                                <div class="unit">at room temperature</div>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-icon"><img src="Media/Thermometer.png" width="100%"></div>
+                                <h3>Melting Point</h3>
+                                <div class="value"></div>
+                                <div id="fahrenheit"class="unit"></div>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-icon"><img src="Media/Scale.png" width="100%"></div>
+                                <h3>Atomic Mass</h3>
+                                <div class="value"></div>
+                                <div class="unit">1 amu = 1.66 &times; 10<sup>-24</sup> g</sup></div>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-icon"><img src="Media/Ruler.png" width="100%"></div>
+                                <h3>Atomic Radius</h3>
+                                <div class="value"></div>
+                                <div class="unit">1 picometer = one trillionth of a meter</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="modal" id="funFactsModal">
+            <div class="modal-content">
+                <button class="close-btn">&times;</button>
+                <section class="fun-facts-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h1 id="ffcard-title">Amazing Hydrogen Facts</h1>
+                            <p>
+                                Surprising discoveries about this simple yet remarkable
+                                element
+                            </p>
+                        </div>
+                        <div class="facts-grid">
+                            <div class="fact-card">
+                                <h3 class="fact-titles"></h3>
+                                <p class="fact-info"></p>
+                            </div>
+                            <div class="fact-card">
+                                <h3 class="fact-titles"></h3>
+                                <p class="fact-info"></p>
+                            </div>
+                            <div class="fact-card" id="centered">
+                                <h3 class="fact-titles"></h3>
+                                <p class="fact-info"></p>
+                            </div>
+                            <div class="fact-card" id="last-fact-card">
+                                <h3 class="fact-titles"></h3>
+                                <p class="fact-info"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="modal" id="configModal">
+            <div class="modal-content">
+                <button class="close-btn">&times;</button>
+                <section class="electron-section">
+                    <div class="section-header">
+                        <h1>Electron Configuration</h1>
+                    </div>
+                    <div class="orbital-container">
+                        <div id="orbital-diagram" class="orbital-diagram">
+                            <div class="nucleus"></div>
+                        </div>
+                    </div>
+                    <div id="config-info">
+                        1s<sup>1</sup>
+                    </div>
+                    <button id="full">View Full Configuration</button>
+                </section>
+            </div>
+        </div>
+        <div class="modal" id="compoundsModal">
+            <div class="modal-content">
+                <button class="close-btn">&times;</button>
+                <section class="compounds-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h1 id="compounds-title"></h1>
+                        </div>
+                        <div class="noble">
+                            <h2>This element is a noble gas, so it does not form compounds!</h2>
+                        </div>
+                        <div class="compounds-list">
+                            <div class="compound-item">
+                                <div class="compound-card">
+                                    <h3 class="compound-name"></h3>
+                                    <div class="compound-formula"></div>
+                                    <div class="compound-uses">
+                                        <h4>Common Uses:</h4>
+                                        <p class="uses-text"></p>
+                                    </div>
+                                </div>
+                                <div class="icon-wrapper">
+                                    <div class="compound-icon"></div>
+                                </div>
+                            </div>
+
+                            <div class="compound-item">
+                                <div class="compound-card">
+                                    <h3 class="compound-name"></h3>
+                                    <div class="compound-formula"></div>
+                                    <div class="compound-uses">
+                                        <h4>Common Uses:</h4>
+                                        <p class="uses-text"></p>
+                                    </div>
+                                </div>
+                                <div class="icon-wrapper">
+                                    <div class="compound-icon"></div>
+                                </div>
+                            </div>
+
+                            <div class="compound-item">
+                                <div class="compound-card">
+                                    <h3 class="compound-name"></h3>
+                                    <div class="compound-formula"></div>
+                                    <div class="compound-uses">
+                                        <h4>Common Uses:</h4>
+                                        <p class="uses-text"></p>
+                                    </div>
+                                </div>
+                                <div class="icon-wrapper">
+                                    <div class="compound-icon"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="modal" id="sourcesModal">
+            <div class="modal-content">
+                <button class="close-btn">&times;</button>
+                <section class="sources-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h1 id="sources-title"></h1>
+                        </div>
+                        <div class="sources-grid">
+                            <div class="source-card">
+                                <div class="source-header">
+                                    <div class="source-icon">1</div>
+                                    <div>
+                                        <h3 class="source-name"></h3>
+                                    </div>
+                                </div>
+                                <div class="source-details">
+                                    <div class="source-detail">
+                                        <h4>Description:</h4>
+                                        <p class="abundance"></p>
+                                    </div>
+                                    <div class="source-detail">
+                                        <h4>How We Get It:</h4>
+                                        <p class="srchow"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="source-card">
+                                <div class="source-header">
+                                    <div class="source-icon">2</div>
+                                    <div>
+                                        <h3 class="source-name"></h3>
+                                    </div>
+                                </div>
+                                <div class="source-details">
+                                    <div class="source-detail">
+                                        <h4>Description:</h4>
+                                        <p class="abundance"></p>
+                                    </div>
+                                    <div class="source-detail">
+                                        <h4>How We Get It:</h4>
+                                        <p class="srchow"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="source-card">
+                                <div class="source-header">
+                                    <div class="source-icon">3</div>
+                                    <div>
+                                        <h3 class="source-name"></h3>
+                                    </div>
+                                </div>
+                                <div class="source-details">
+                                    <div class="source-detail">
+                                        <h4>Description:</h4>
+                                        <p class="abundance"></p>
+                                    </div>
+                                    <div class="source-detail">
+                                        <h4>How We Get It:</h4>
+                                        <p class="srchow"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="source-card">
+                                <div class="source-header">
+                                    <div class="source-icon">4</div>
+                                    <div>
+                                        <h3 class="source-name"></h3>
+                                    </div>
+                                </div>
+                                <div class="source-details">
+                                    <div class="source-detail">
+                                        <h4>Description:</h4>
+                                        <p class="abundance"></p>
+                                    </div>
+                                    <div class="source-detail">
+                                        <h4>How We Get It:</h4>
+                                        <p class="srchow"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="modal" id="appsModal">
+            <div class="modal-content">
+                <button class="close-btn">&times;</button>
+                <section class="applications-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h1 id="app-title"></h1>
+                        </div>
+                        <div class="applications-grid">
+                            <div class="application-card">
+                                <div class="application-header">
+                                    <div class="application-icon">I</div>
+                                    <h3 class="app-header"></h3>
+                                </div>
+                                <p class="application-description"></p>
+                                <div class="application-details">
+                                    <h4>More Details:</h4>
+                                    <p class="app-details">
+                                        Fuel cell vehicles emit only water vapor,
+                                        offering zero-emission transportation
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="application-card">
+                                <div class="application-header">
+                                    <div class="application-icon">II</div>
+                                    <h3 class="app-header"></h3>
+                                </div>
+                                <p class="application-description"></p>
+                                <div class="application-details">
+                                    <h4>More Details:</h4>
+                                    <p class="app-details">
+                                        Space shuttles and many rockets use hydrogen as
+                                        a high-energy, clean-burning fuel
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="application-card">
+                                <div class="application-header">
+                                    <div class="application-icon">III</div>
+                                    <h3 class="app-header"></h3>
+                                </div>
+                                <p class="application-description"></p>
+                                <div class="application-details">
+                                    <h4>More Details:</h4>
+                                    <p class="app-details">
+                                        Excess solar and wind energy can create hydrogen
+                                        for long-term storage
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="application-card">
+                                <div class="application-header">
+                                    <div class="application-icon">IV</div>
+                                    <h3 class="app-header"></h3>
+                                </div>
+                                <p class="application-description"></p>
+                                <div class="application-details">
+                                    <h4>More Details:</h4>
+                                    <p class="app-details">
+                                        Used in petroleum refining, ammonia production,
+                                        and metal processing
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="learncode.js"></script>
+</body>
+</html>

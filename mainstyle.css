@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100dvh;
+}
+body {
+    font-family: 'Architects Daughter', cursive;
+    background-color: #cfefff;
+    position: relative;
+}
+#nav {
+  position: sticky;
+  top: 0px;
+  background-color: #333;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+}
+
+.nav-logo img {
+  height: 60px; /* Adjust to your preference */
+  width: auto;
+  border-radius: 0.25em
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+.nav-spacer {
+  width: 60px; /* Should match the logo width to keep items centered */
+  padding: 0.5rem 1rem;
+}
+
+#nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1; /* This allows the ul to take up available space */
+}
+
+#nav li {
+  margin: 0.5rem 1rem;
+}
+
+#nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+#nav ul li a:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+
+/* Keep your existing nav li and nav a styles */
+
+@media (max-width: 600px) {
+  #nav {
+    flex-direction: column;
+  }
+  
+  .nav-logo {
+    align-self: flex-start;
+  }
+  
+  .nav-spacer {
+    display: none;
+  }
+
+  #nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  #nav li {
+    margin: 0.25rem 0;
+  }
+
+  #nav ul li a {
+    text-align: left;
+    font-size: 1.1rem;
+  }
+}
+.learnels h3 {
+    padding-top: 1%;
+}
+#homescrn {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#title, #select-title {
+    font-size: 4.7rem;
+    margin-top: -1em;
+}
+#title span {
+    color: blue;
+}
+#subtitle {
+    font-size: 2.1rem;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+#homescrn a {
+    border: 1px outset buttonborder;
+    border-radius: 0.5em;
+    color: buttontext;
+    background-color: lightgrey;
+    text-decoration: none;
+    margin-top: 1.75em;
+    cursor: grab;
+}
+#play {
+    padding: 2% 5%;
+    font-size: 2.5rem;
+}
+#homescrn a:hover {
+    background-color: rgb(148, 148, 148);
+}
+button {
+    cursor: grab;
+    /*background-color: TBD;*/
+    width: 250px;
+    height: 125px;
+    font-family: inherit;
+    font-size: 32px;
+}
+button:active , #play:active {
+    transform: scale(0.96);
+}
+#modes {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+}
+#quiz {
+    display: inline;
+    margin-right: 3.5px;
+}
+#learn {
+    display: inline;
+    margin-left: 3.5px;
+}
+#quiz-els {
+    display: none;
+    position: absolute;
+    right: 10%;
+    grid-template-columns: auto auto;
+    gap: 34px;
+    height: 50%;
+    font-size: 30px;
+}
+#quiz-els h3 {
+    font-weight: bold;
+}
+.quizbtns {
+    width: 150px;
+    height: 75px;
+    font-size: 23px;
+    margin: auto;
+}
+#quiz-sections, #learn-sections {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#quiz-sections {
+    margin: 10px 0;
+}
+#learn-sections {
+    display: none;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
+    width: 100%;
+    height: 75%;
+}
+#search {
+    display: flex;
+    flex-direction: column;
+    height: 7%;
+    width: 60%;
+}
+#search:focus-within #suggestions {
+    display: flex;
+}
+#el-search-inp {
+    align-self: center;
+    height: 450%;
+    width: 100%;
+    font-size: 80%;
+    padding-left: 4%;
+}
+#suggestions {
+    position: absolute;
+    margin-top: 3%;
+    width: 60%;
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#suggestions li {
+    cursor: grab;
+    width: 100%;
+    border: 2px black solid;
+    background-color: white;
+}
+.quiz-section {
+    width: 300px;
+    height: 80px;
+}
+.quizfunc {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: center;
+}
+#learns {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 2%;
+    row-gap: 2%;
+    width: 60%;
+}
+.learn-btn {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2%;
+    place-self: center;
+}
+.disabled {
+    opacity: 0.4;
+}
+#quiz-answers {
+    height: 100%;
+    display: none;
+    position: absolute;
+    left: 10%;
+    grid-template-columns: auto auto;
+}
+.qas {
+    border: black 2px solid;
+    width: 500px;
+    height: 90px;
+    background-color: greenyellow;
+}
+#learn-screen {
+    display: none;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+#prevdiv, #nextdiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#prevbtn, #nextbtn {
+    border: unset;
+    width: 100%;
+    height: unset;
+    background-color: transparent;
+}
+#prevbtn div, #nextbtn div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#previmg, #nextimg {
+    width: 70%;
+    height: auto;
+    display: block;
+}
+#each-element {
+    display: none;
+    border: black 4px solid;
+    height: 20%;
+    aspect-ratio: 1 / 1;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+}
+#num {
+    position: relative;
+    left: 6%;
+    top: 2%;
+    font-size: 150;
+}
+#symbol, #el-name {
+    align-self: center;
+}
+#symbol {
+    font-size: 300%;
+    margin-bottom: 7%;
+}
+#ffbox {
+    position: relative;
+    display: grid;
+    align-self: center;
+    height: 80%;
+    aspect-ratio: 3 / 2;
+    border: black 3px solid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+#config {
+    display: flex;
+    text-align: center;
+    grid-column: 1 / 3;
+    grid-row: 5;
+    border-top: black 3px solid;
+    border-right: black 3px solid;
+    background-color: #f6d9d6;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#config h3 {
+    padding-bottom: 0;
+}
+#config p span{
+    text-decoration: underline;
+}
+.configwords {
+    text-align: left;
+}
+#ffs {
+    justify-content: normal;
+    border-left: black 3px solid;
+    grid-row: 1 / 5;
+    grid-column: 4;
+    background-color: #ffc107;
+    word-break: break-word;
+    padding: 5%;
+    font-size: 110%;
+    overflow-y: scroll;
+}
+#ffs ul, #config ul{
+    list-style-position: inside;
+}
+#ffs ul li, #ffs h3 , #basicscrn ul li, #basicscrn h3{
+    padding-bottom: 12%;
+    padding-top: 1%;
+}
+#basicscrn ul {
+    list-style-position: inside;
+    padding-left: 3%;
+}
+#ions {
+    grid-column: 3 / 5;
+    grid-row: 5;
+    border-top: black 3px solid;
+    background-color: #85e3f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#ions div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+@keyframes basic {
+    0% {position: static; height: 100%;}
+    100% {position: absolute; height: 120%; aspect-ratio: 3 / 2;}
+}
+#basicscrn, #basicanim {
+    border-right: black 3px solid;
+    grid-row: 1 / 5;
+    grid-column: 1;
+    background-color: #d6e4ec;
+}
+#basicanim {
+    grid-column: 1;
+    display: none;
+    align-self: center;
+    background-color: lightgray;
+    animation: basic 2s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid black;
+}
+#apps {
+    border-top: black 3px solid;
+    grid-row: 2 / 5;
+    grid-column: 3 / 4;
+    background-color: #d8efd1;
+}
+#sources {
+    border-right: black 3px solid;
+    border-top: black 3px solid;
+    grid-row: 2 / 5;
+    grid-column: 2 / 3;
+    background-color: #e5daf6;
+}
+#apps, #sources {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.src-btns {
+    height: 35%;
+    width: 100%;
+    margin-top: 8%;
+}
+#intro {
+    grid-row: 1 / 2;
+    grid-column: 2 / 4;
+    background-color: #faf6ef;
+    text-align: center;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#el-name {
+    position: relative;
+    bottom: 5%;
+    font-size: 130%;
+}
+.learnels{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@keyframes srcs {
+    from {height: 0; width: 0;} to {height: 60%; aspect-ratio: 3 / 2;}
+}
+#srcscrn {
+    display: none;
+    align-self: center;
+    border: black 3px solid;
+    position: absolute;
+    background-color: lightgray;
+    animation: srcs 2s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#back {
+    display: none;
+    position: absolute;
+    right: 0.5%;
+    top: 0.5%;
+    margin: 2%;
+    background-color: transparent;
+    border: none;
+    height: 2.5%;
+    width: 3%;
+    color: red;
+    font-weight: bold;
+}
+#src1, #app1 {
+    margin-bottom: 15%;
+}
+#srctitle {
+    display: none;
+    font-size: 35px;
+    margin: 2%;
+}
+#srcimg, #srcexp {
+    height: 100%;
+    width: auto;
+    margin: 7%;
+}
+#srcie {
+    display: none;
+}
+#srcexp {
+    word-break: break-word;
+    font-size: 30px;
+}
+#srcsrc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}

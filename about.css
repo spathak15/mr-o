@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+/* User's requested CSS - UNCHANGED */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100dvh;
+}
+body {
+    min-height: 100dvh;
+    font-family: 'Architects Daughter', cursive;
+    background-color: #cfefff;
+    position: relative;
+}
+
+#nav {
+  position: sticky;
+  top: 0px;
+  background-color: #333;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+}
+
+.nav-logo img {
+  height: 60px; /* Adjust to your preference */
+  width: auto;
+  border-radius: 0.25em
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+.nav-spacer {
+  width: 60px; /* Should match the logo width to keep items centered */
+  padding: 0.5rem 1rem;
+}
+
+#nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1; /* This allows the ul to take up available space */
+}
+
+#nav li {
+  margin: 0.5rem 1rem;
+}
+
+#nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+#nav ul li a:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+
+/* Keep your existing nav li and nav a styles */
+
+@media (max-width: 600px) {
+  #nav {
+    flex-direction: column;
+  }
+  
+  .nav-logo {
+    align-self: flex-start;
+  }
+  
+  .nav-spacer {
+    display: none;
+  }
+
+  #nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  #nav li {
+    margin: 0.25rem 0;
+  }
+
+  #nav ul li a {
+    text-align: left;
+    font-size: 1.1rem;
+  }
+}
+
+/* Custom CSS to replace Tailwind */
+
+/* Layout Utilities */
+.container {
+    width: 100%;
+    max-width: 64rem; /* 5xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+}
+
+.space-y-8 > * + * {
+    margin-top: 2rem;
+}
+
+/* Header Section */
+.header-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.7s ease-out;
+}
+
+.header-card {
+    display: inline-block;
+    padding: 1.5rem;
+    background-color: white;
+    border: 4px solid black;
+    transform: rotate(-1deg);
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+    transition: all 0.3s ease;
+}
+
+.header-card:hover {
+    transform: rotate(0deg);
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+}
+
+.header-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: black;
+    letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+    .header-title {
+        font-size: 3.75rem;
+    }
+}
+
+.header-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    color: #4b5563; /* gray-600 */
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.col-span-2 {
+    grid-column: span 1;
+}
+@media (min-width: 768px) {
+    .col-span-2 {
+        grid-column: span 2;
+    }
+}
+
+/* Cards */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    background-color: white; /* Default fallback */
+}
+
+.card:hover {
+    transform: scale(1.05) !important;
+}
+
+.bg-yellow { background-color: #fff9c4; }
+.bg-red { background-color: #ffcdd2; }
+.bg-purple { background-color: #e1bee7; }
+
+.rotate-1 { transform: rotate(1deg); }
+.rotate-neg-1 { transform: rotate(-1deg); }
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 2px dashed black;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.card-content {
+    padding: 1.5rem;
+    padding-top: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.625;
+}
+
+.mb-4 { margin-bottom: 1rem; }
+
+/* Two column grid inside card */
+.inner-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    .inner-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.list-disc {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.list-space > li + li {
+    margin-top: 0.25rem;
+}
+
+.list-none {
+    list-style-type: none;
+}
+
+/* Button */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #60a5fa; /* blue-400 */
+    color: black;
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(4px);
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+    background-color: #93c5fd; /* blue-300 */
+}
+
+.btn-icon {
+    transition: transform 0.3s ease;
+}
+.btn-primary:hover .btn-icon {
+    transform: rotate(45deg);
+}
+
+/* Separator */
+.separator {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(4px);
+    padding: 1.5rem;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.footer-subtitle {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem; /* Added spacing */
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #374151; /* gray-700 */
+}
+
+.text-gray {
+    color: #374151;
+}
+
+.info-box {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #eff6ff; /* blue-50 */
+    border: 1px solid #bfdbfe; /* blue-200 */
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+/* Icons */
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.icon-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
